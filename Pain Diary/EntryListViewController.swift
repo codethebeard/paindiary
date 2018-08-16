@@ -33,6 +33,19 @@ class EntryListViewController: UITableViewController {
 
         return cell
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "entryDetailSegue"?:
+            if let row = tableView.indexPathForSelectedRow?.row {
+                let entry = painEntries[row]
+                let entryDetailViewController = segue.destination as! EntryDetailViewController
+                entryDetailViewController.painEntry = entry
+            }
+        default:
+            preconditionFailure("Unexpected segue identifier")
+        }
+    }
 }
 
 extension EntryListViewController: PainConfigurable {
