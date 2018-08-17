@@ -8,8 +8,14 @@
 
 import Foundation
 
-struct PainEntry {
+class PainEntry {
     var intensity: PainIntensity
     var notes: String?
     var timestamp: Date
+
+    init(intensity: PainIntensity, notes: String?, timestamp: Date) {
+        self.intensity = intensity
+        self.notes = notes
+        self.timestamp = timestamp
+    }
 }

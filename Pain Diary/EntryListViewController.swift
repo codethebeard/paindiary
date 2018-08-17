@@ -16,6 +16,10 @@ class EntryListViewController: UITableViewController {
         super.viewDidLoad()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return painEntries.count
     }
@@ -32,6 +36,13 @@ class EntryListViewController: UITableViewController {
         cell.detailTextLabel?.text = "on \(dateString)"
 
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            painEntries.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

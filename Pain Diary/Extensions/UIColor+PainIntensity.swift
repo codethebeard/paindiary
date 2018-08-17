@@ -13,4 +13,5 @@ extension UIColor {
     static let meh = UIColor(named: "mehColor")!
     static let pain = UIColor(named: "painColor")!
     static let crying = UIColor(named: "cryingColor")!
+    static let coolBlue = UIColor(named: "coolblue")!
 }

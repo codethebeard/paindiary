@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whJ-xF-Tri">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <connections>
                                     <segue destination="k18-YE-R2A" kind="embed" identifier="embedContainerViewController" id="hzO-Ja-KdW"/>
                                 </connections>
@@ -49,10 +50,11 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bO4-Jm-2Rj">
-                                <rect key="frame" x="93.5" y="555" width="187.5" height="32"/>
-                                <color key="backgroundColor" red="0.64254792561738028" green="0.94664603093018407" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
-                                <state key="normal" title="Add New Entry">
+                                <rect key="frame" x="93.5" y="546" width="187.5" height="41"/>
+                                <color key="backgroundColor" name="coolblue"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                <state key="normal" title="Pick a mood">
                                     <color key="titleColor" red="0.96970121768032291" green="1" blue="0.99941483164043354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -76,6 +78,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="5W5-ep-dQG"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="addEntryButton" destination="bO4-Jm-2Rj" id="SKN-Fh-DjM"/>
                         <outlet property="buttonStackView" destination="0NN-DL-XKc" id="Anw-Tv-cjv"/>
@@ -90,7 +93,7 @@
             <objects>
                 <tableViewController id="k18-YE-R2A" customClass="EntryListViewController" customModule="Pain_Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NhE-m0-ieE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -137,7 +140,7 @@
             <objects>
                 <viewController modalTransitionStyle="flipHorizontal" id="AM2-T0-ehS" customClass="EntryDetailViewController" customModule="Pain_Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="CPU-h5-san">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BDC-0o-Vsv">
@@ -147,8 +150,8 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Oms-Hu-9RV">
-                                <rect key="frame" x="20" y="185" width="355" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="12" y="185" width="351" height="128"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="5Sc-wF-ACN"/>
                                 </constraints>
@@ -157,7 +160,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" keyboardAppearance="alert" returnKeyType="done" smartInsertDeleteType="yes" smartQuotesType="yes"/>
                             </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMO-ID-Zix">
-                                <rect key="frame" x="0.0" y="559" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="603" width="375" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="save" id="mX2-lf-eAA">
                                         <connections>
@@ -165,7 +168,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="bkc-yo-kva"/>
-                                    <barButtonItem systemItem="trash" id="76n-K7-Ira">
+                                    <barButtonItem enabled="NO" systemItem="trash" id="76n-K7-Ira">
                                         <color key="tintColor" red="1" green="0.34131965330000003" blue="0.44213688070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="trashButtonTapped:" destination="AM2-T0-ehS" id="0od-ty-Gmx"/>
@@ -173,8 +176,8 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFZ-ck-zn0">
-                                <rect key="frame" x="20" y="156" width="54" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFZ-ck-zn0">
+                                <rect key="frame" x="12" y="156" width="62" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -190,10 +193,10 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="lo0-9b-R8V" firstAttribute="trailing" secondItem="oJq-KR-9YV" secondAttribute="trailing" constant="20" id="72O-LV-4lN"/>
-                            <constraint firstItem="lo0-9b-R8V" firstAttribute="trailing" secondItem="Oms-Hu-9RV" secondAttribute="trailing" id="9gT-cx-LTM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Oms-Hu-9RV" secondAttribute="trailingMargin" id="9gT-cx-LTM"/>
                             <constraint firstItem="EMO-ID-Zix" firstAttribute="leading" secondItem="lo0-9b-R8V" secondAttribute="leading" id="AB1-WO-ykZ"/>
-                            <constraint firstItem="KFZ-ck-zn0" firstAttribute="leading" secondItem="CPU-h5-san" secondAttribute="leadingMargin" id="DUS-8A-2Vi"/>
-                            <constraint firstItem="Oms-Hu-9RV" firstAttribute="leading" secondItem="CPU-h5-san" secondAttribute="leadingMargin" id="EL8-1b-EmN"/>
+                            <constraint firstItem="KFZ-ck-zn0" firstAttribute="leadingMargin" secondItem="CPU-h5-san" secondAttribute="leadingMargin" id="DUS-8A-2Vi"/>
+                            <constraint firstItem="Oms-Hu-9RV" firstAttribute="leadingMargin" secondItem="CPU-h5-san" secondAttribute="leadingMargin" id="EL8-1b-EmN"/>
                             <constraint firstItem="EMO-ID-Zix" firstAttribute="bottom" secondItem="lo0-9b-R8V" secondAttribute="bottom" id="FOf-mW-VQg"/>
                             <constraint firstItem="BDC-0o-Vsv" firstAttribute="leading" secondItem="CPU-h5-san" secondAttribute="leading" id="MSd-UP-nXi"/>
                             <constraint firstItem="KFZ-ck-zn0" firstAttribute="top" secondItem="oJq-KR-9YV" secondAttribute="bottom" constant="10" id="MgT-6O-iVn"/>
@@ -216,15 +219,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flc-ra-SUu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2391" y="34"/>
+            <point key="canvasLocation" x="2389.5999999999999" y="33.733133433283363"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4WI-wL-tkN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1k6-4P-7dF" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="1k6-4P-7dF" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="45W-dj-kds">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -237,4 +240,9 @@
             <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="coolblue">
+            <color red="0.35686274509803922" green="0.75294117647058822" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

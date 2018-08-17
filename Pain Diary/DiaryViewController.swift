@@ -55,6 +55,11 @@ class DiaryViewController: UIViewController {
         addEntryButton.layer.cornerRadius = addEntryButton.bounds.height / 2
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addEntryButton.alpha = 0.0
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -64,6 +69,11 @@ class DiaryViewController: UIViewController {
         guard let selectedIndex = painLevelButtons.index(of: sender) else {
             preconditionFailure("Unable to find the tapped buton in the buttons array.")
         }
+
+        UIView.animate(withDuration: 1) {
+            self.addEntryButton.alpha = 1.0
+        }
+
         currentPainLevel = painLevels[selectedIndex]
     }
 
@@ -79,6 +89,7 @@ class DiaryViewController: UIViewController {
             preconditionFailure("Unexpected segue identifier")
         }
     }
+
     @IBAction func addEntryTapped(_ sender: UIButton) {
         guard let currentPainLevel = currentPainLevel else {
             return

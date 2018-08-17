@@ -40,6 +40,7 @@ class EntryDetailViewController: UIViewController {
     }
 
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+        painEntry.notes = painEntryNotes.text
         self.dismiss(animated: true, completion: nil)
     }
 }
