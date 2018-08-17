@@ -70,7 +70,7 @@ class DiaryViewController: UIViewController {
             preconditionFailure("Unable to find the tapped buton in the buttons array.")
         }
 
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.3) {
             self.addEntryButton.alpha = 1.0
         }
 

@@ -22,13 +22,19 @@ class EntryDetailViewController: UIViewController {
 
         title = "I feel \(painEntry.intensity.name)"
         bindUI()
+        styleUI()
     }
 
-    func bindUI() {
+    private func bindUI() {
         let date = DateFormatter.localizedString(from: painEntry.timestamp, dateStyle: .medium, timeStyle: .short)
         painIntensityImage.image = painEntry.intensity.image
         painEntryNotes.text = painEntry.notes
         timeLabel.text = "Feeling \(painEntry.intensity.name) on \(date)"
+    }
+
+    private func styleUI() {
+        painEntryNotes.layer.cornerRadius = 10.0
+        painEntryNotes.layer.masksToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
