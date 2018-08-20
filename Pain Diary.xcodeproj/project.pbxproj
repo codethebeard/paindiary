@@ -10,6 +10,7 @@
 		B83E01512125FFAB004951A1 /* EntryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83E01502125FFAB004951A1 /* EntryListViewController.swift */; };
 		B83E0153212607C4004951A1 /* PainConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83E0152212607C4004951A1 /* PainConfigurable.swift */; };
 		B83E01552126168E004951A1 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83E01542126168E004951A1 /* EntryDetailViewController.swift */; };
+		B83E015821276491004951A1 /* PainEntriesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83E015721276491004951A1 /* PainEntriesStore.swift */; };
 		B891F7062125CE1300FFE5B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B891F7052125CE1300FFE5B4 /* AppDelegate.swift */; };
 		B891F70B2125CE1300FFE5B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B891F7092125CE1300FFE5B4 /* Main.storyboard */; };
 		B891F70D2125CE1400FFE5B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B891F70C2125CE1400FFE5B4 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		B83E01502125FFAB004951A1 /* EntryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListViewController.swift; sourceTree = "<group>"; };
 		B83E0152212607C4004951A1 /* PainConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainConfigurable.swift; sourceTree = "<group>"; };
 		B83E01542126168E004951A1 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		B83E015721276491004951A1 /* PainEntriesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainEntriesStore.swift; sourceTree = "<group>"; };
 		B891F7022125CE1300FFE5B4 /* Pain Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pain Diary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B891F7052125CE1300FFE5B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B891F70A2125CE1300FFE5B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B83E01562127646B004951A1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B83E0152212607C4004951A1 /* PainConfigurable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		B891F6F92125CE1300FFE5B4 = {
 			isa = PBXGroup;
 			children = (
@@ -68,7 +78,7 @@
 		B891F7042125CE1300FFE5B4 /* Pain Diary */ = {
 			isa = PBXGroup;
 			children = (
-				B83E0152212607C4004951A1 /* PainConfigurable.swift */,
+				B83E01562127646B004951A1 /* Protocols */,
 				B891F7832125D2DC00FFE5B4 /* Extensions */,
 				B891F7172125D00A00FFE5B4 /* Models */,
 				B891F7882125D67000FFE5B4 /* DiaryViewController.swift */,
@@ -88,6 +98,7 @@
 			children = (
 				B891F7182125D03700FFE5B4 /* PainIntensity.swift */,
 				B891F71A2125D0A400FFE5B4 /* PainEntry.swift */,
+				B83E015721276491004951A1 /* PainEntriesStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 				B83E0153212607C4004951A1 /* PainConfigurable.swift in Sources */,
 				B83E01512125FFAB004951A1 /* EntryListViewController.swift in Sources */,
 				B83E01552126168E004951A1 /* EntryDetailViewController.swift in Sources */,
+				B83E015821276491004951A1 /* PainEntriesStore.swift in Sources */,
 				B891F7192125D03700FFE5B4 /* PainIntensity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

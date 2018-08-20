@@ -12,10 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var painEntries: [PainEntry]!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        painEntries = []
+        let navController = window!.rootViewController as! UINavigationController
+        let diaryViewController = navController.topViewController as! DiaryViewController
+        diaryViewController.painEntries = painEntries
+
         return true
     }
 

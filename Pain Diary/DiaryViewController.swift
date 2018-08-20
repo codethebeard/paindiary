@@ -14,6 +14,7 @@ class DiaryViewController: UIViewController {
     @IBOutlet weak var buttonStackView: UIStackView!
 
     var moodsConfigurable: PainConfigurable!
+    var painEntries: [PainEntry]!
 
     var painLevels: [PainIntensity] = [] {
         didSet {
@@ -84,6 +85,10 @@ class DiaryViewController: UIViewController {
                 preconditionFailure("Embedded view controller expected to confirm to MoodsConfigurable")
             }
             self.moodsConfigurable = painConfigurable
+            guard let entryListViewController = segue.destination as? EntryListViewController else {
+                preconditionFailure("View controller does't exist")
+            }
+            entryListViewController.painEntries = painEntries
             segue.destination.additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 0, bottom: 160, right: 0)
         default:
             preconditionFailure("Unexpected segue identifier")

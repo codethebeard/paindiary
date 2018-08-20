@@ -10,7 +10,7 @@ import UIKit
 
 class EntryListViewController: UITableViewController {
 
-    private var painEntries: [PainEntry] = []
+    var painEntries: [PainEntry]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
